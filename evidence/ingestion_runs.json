@@ -1,0 +1,25 @@
+{
+  "statement_id": "01f1cb0c-7e1b-164e-88f1-4dca31606327",
+  "query": "SELECT observed_at,rows_before,rows_after,rows_added FROM musica_saenz.audit.ingestion_runs ORDER BY observed_at",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "observed_at": "2026-10-18T15:36:59.525Z",
+      "rows_before": "0",
+      "rows_after": "15700",
+      "rows_added": "15700"
+    },
+    {
+      "observed_at": "2026-10-18T15:45:39.979Z",
+      "rows_before": "15700",
+      "rows_after": "31400",
+      "rows_added": "15700"
+    },
+    {
+      "observed_at": "2026-10-18T15:54:43.272Z",
+      "rows_before": "31400",
+      "rows_after": "31400",
+      "rows_added": "0"
+    }
+  ]
+}

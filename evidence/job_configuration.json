@@ -1,0 +1,61 @@
+{
+  "job_id": 1104473859137730,
+  "name": "musica_billboard_final",
+  "max_concurrent_runs": 1,
+  "trigger": {
+    "file_arrival": {
+      "min_time_between_triggers_seconds": 60,
+      "url": "/Volumes/musica_saenz/bronze/landing/charts/",
+      "wait_after_last_change_seconds": 60
+    },
+    "pause_status": "UNPAUSED"
+  },
+  "tasks": [
+    {
+      "task_key": "bronze",
+      "depends_on": [],
+      "max_retries": 1,
+      "min_retry_interval_millis": 60000
+    },
+    {
+      "task_key": "gold",
+      "depends_on": [
+        {
+          "task_key": "silver"
+        }
+      ],
+      "max_retries": 0,
+      "min_retry_interval_millis": 0
+    },
+    {
+      "task_key": "governance",
+      "depends_on": [
+        {
+          "task_key": "gold"
+        }
+      ],
+      "max_retries": 0,
+      "min_retry_interval_millis": 0
+    },
+    {
+      "task_key": "observability",
+      "depends_on": [
+        {
+          "task_key": "governance"
+        }
+      ],
+      "max_retries": 0,
+      "min_retry_interval_millis": 0
+    },
+    {
+      "task_key": "silver",
+      "depends_on": [
+        {
+          "task_key": "bronze"
+        }
+      ],
+      "max_retries": 0,
+      "min_retry_interval_millis": 0
+    }
+  ]
+}

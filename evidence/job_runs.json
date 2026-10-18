@@ -1,0 +1,142 @@
+[
+  {
+    "run_id": 319200698253743,
+    "job_id": 1104473859137730,
+    "start_time": 1792337752484,
+    "end_time": 1792338173135,
+    "state": {
+      "life_cycle_state": "TERMINATED",
+      "result_state": "SUCCESS",
+      "state_message": "",
+      "user_cancelled_or_timedout": false
+    },
+    "run_page_url": "https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/319200698253743",
+    "task_attempts": [
+      {
+        "task_key": "observability",
+        "run_id": 9297467385808,
+        "result": "UPSTREAM_FAILED"
+      },
+      {
+        "task_key": "observability",
+        "run_id": 271549774670054,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "governance",
+        "run_id": 564295006722457,
+        "result": "UPSTREAM_FAILED"
+      },
+      {
+        "task_key": "governance",
+        "run_id": 536811157641635,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "silver",
+        "run_id": 1026159783802911,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "bronze",
+        "run_id": 899023700254213,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "gold",
+        "run_id": 325714959821317,
+        "result": "FAILED"
+      },
+      {
+        "task_key": "gold",
+        "run_id": 621873123714664,
+        "result": "FAILED"
+      },
+      {
+        "task_key": "gold",
+        "run_id": 344785997604138,
+        "result": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "run_id": 759442763674218,
+    "job_id": 1104473859137730,
+    "start_time": 1792338320676,
+    "end_time": 1792338479286,
+    "state": {
+      "life_cycle_state": "TERMINATED",
+      "result_state": "SUCCESS",
+      "state_message": "",
+      "user_cancelled_or_timedout": false
+    },
+    "run_page_url": "https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/759442763674218",
+    "task_attempts": [
+      {
+        "task_key": "observability",
+        "run_id": 847012941329556,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "governance",
+        "run_id": 27176945293110,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "silver",
+        "run_id": 507789430703530,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "bronze",
+        "run_id": 633228306748778,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "gold",
+        "run_id": 269981405087027,
+        "result": "SUCCESS"
+      }
+    ]
+  },
+  {
+    "run_id": 61396012224893,
+    "job_id": 1104473859137730,
+    "start_time": 1792338869171,
+    "end_time": 1792339023385,
+    "state": {
+      "life_cycle_state": "TERMINATED",
+      "result_state": "SUCCESS",
+      "state_message": "",
+      "user_cancelled_or_timedout": false
+    },
+    "run_page_url": "https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/61396012224893",
+    "task_attempts": [
+      {
+        "task_key": "observability",
+        "run_id": 646967456012041,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "governance",
+        "run_id": 1002466586076555,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "silver",
+        "run_id": 767462085948573,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "bronze",
+        "run_id": 91403930721039,
+        "result": "SUCCESS"
+      },
+      {
+        "task_key": "gold",
+        "run_id": 642554202535465,
+        "result": "SUCCESS"
+      }
+    ]
+  }
+]

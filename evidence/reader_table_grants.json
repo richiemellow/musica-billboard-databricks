@@ -1,0 +1,13 @@
+{
+  "statement_id": "01f1cb0c-86bc-19ae-82e4-0743c3375402",
+  "query": "SHOW GRANTS `musica_lectores_uc` ON TABLE musica_saenz.gold.validated_positions",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "Principal": "musica_lectores_uc",
+      "ActionType": "SELECT",
+      "ObjectType": "TABLE",
+      "ObjectKey": "musica_saenz.gold.validated_positions"
+    }
+  ]
+}

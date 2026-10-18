@@ -1,0 +1,21 @@
+{
+  "statement_id": "01f1cb0c-8818-10a8-a689-3e46a191a151",
+  "query": "SELECT schema_name,table_name,column_name,tag_name,tag_value FROM musica_saenz.information_schema.column_tags WHERE schema_name='governance'",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "schema_name": "governance",
+      "table_name": "reviewers_demo",
+      "column_name": "reviewer_email",
+      "tag_name": "classification",
+      "tag_value": "sensitive_demo"
+    },
+    {
+      "schema_name": "governance",
+      "table_name": "reviewers_demo",
+      "column_name": "reviewer_email",
+      "tag_name": "synthetic",
+      "tag_value": "true"
+    }
+  ]
+}

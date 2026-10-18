@@ -1,0 +1,19 @@
+{
+  "statement_id": "01f1cb0c-852a-10df-9e04-69c4d8b3a60d",
+  "query": "SHOW GRANTS `musica_lectores_uc` ON CATALOG musica_saenz",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "Principal": "musica_lectores_uc",
+      "ActionType": "USE CATALOG",
+      "ObjectType": "CATALOG",
+      "ObjectKey": "musica_saenz"
+    },
+    {
+      "Principal": "account users",
+      "ActionType": "BROWSE",
+      "ObjectType": "CATALOG",
+      "ObjectKey": "musica_saenz"
+    }
+  ]
+}

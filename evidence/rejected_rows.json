@@ -1,0 +1,37 @@
+{
+  "statement_id": "01f1cb0c-840c-1e43-b145-31e3eb8bc12c",
+  "query": "SELECT observed_at,test_name,substring_index(error_literal,'JVM stacktrace:',1) error_literal_excerpt FROM musica_saenz.audit.quality_rejections ORDER BY observed_at",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "observed_at": "2026-10-18T15:41:28.566Z",
+      "test_name": "rank_fuera_de_rango",
+      "error_literal_excerpt": "(com.databricks.sql.transaction.tahoe.schema.DeltaInvariantViolationException) [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint valid_rank between(rank, 1, 100) violated by row with values:\n - rank : 101.\n\n"
+    },
+    {
+      "observed_at": "2026-10-18T15:41:28.566Z",
+      "test_name": "rank_nulo",
+      "error_literal_excerpt": "(com.databricks.sql.transaction.tahoe.schema.DeltaInvariantViolationException) [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint valid_rank between(rank, 1, 100) violated by row with values:\n - rank : null.\n\n"
+    },
+    {
+      "observed_at": "2026-10-18T15:46:52.763Z",
+      "test_name": "rank_fuera_de_rango",
+      "error_literal_excerpt": "(com.databricks.sql.transaction.tahoe.schema.DeltaInvariantViolationException) [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint valid_rank between(rank, 1, 100) violated by row with values:\n - rank : 101.\n\n"
+    },
+    {
+      "observed_at": "2026-10-18T15:46:52.763Z",
+      "test_name": "song_id_nulo",
+      "error_literal_excerpt": "(com.databricks.sql.transaction.tahoe.schema.DeltaInvariantViolationException) [DELTA_NOT_NULL_CONSTRAINT_VIOLATED] NOT NULL constraint violated for column: song_id.\n\n\n"
+    },
+    {
+      "observed_at": "2026-10-18T15:55:50.598Z",
+      "test_name": "rank_fuera_de_rango",
+      "error_literal_excerpt": "(com.databricks.sql.transaction.tahoe.schema.DeltaInvariantViolationException) [DELTA_VIOLATE_CONSTRAINT_WITH_VALUES] CHECK constraint valid_rank between(rank, 1, 100) violated by row with values:\n - rank : 101.\n\n"
+    },
+    {
+      "observed_at": "2026-10-18T15:55:50.598Z",
+      "test_name": "song_id_nulo",
+      "error_literal_excerpt": "(com.databricks.sql.transaction.tahoe.schema.DeltaInvariantViolationException) [DELTA_NOT_NULL_CONSTRAINT_VIOLATED] NOT NULL constraint violated for column: song_id.\n\n\n"
+    }
+  ]
+}
