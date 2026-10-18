@@ -1,6 +1,6 @@
-# Bitácora del agente externo (O9 adicional)
+# Bitácora del agente externo (O9 reemplaza C5)
 
-El estudiante pidió investigar fuentes musicales, preparar el dataset y ejecutar el laboratorio completo con su autorización. O9 no sustituye ningún componente por decisión del estudiante; la decisión corresponde al profesor.
+El estudiante pidió investigar fuentes musicales, preparar el dataset y ejecutar el laboratorio completo con su autorización. El estudiante eligió O9 como reemplazo de C5. Se conservan V1/V2 y C1–C4 como requisitos evaluados. La observabilidad y optimización ya implementadas quedan como respaldo adicional.
 
 ## Trabajo realizado con el agente
 
@@ -24,3 +24,13 @@ El estudiante pidió investigar fuentes musicales, preparar el dataset y ejecuta
 ## Participación y límites
 
 El estudiante eligió el dominio y autorizó el trabajo. El agente preparó y ejecutó el código. La presentación y defensa requieren que el estudiante entienda la arquitectura, las decisiones y las limitaciones. No se fabricaron resultados, fechas de ejecución ni pruebas con una segunda identidad. El historial de errores y correcciones se conserva.
+
+## Demostración en la defensa
+
+1. Solicitud: preparar los datos musicales y ejecutar el laboratorio completo con Databricks CLI.
+2. Trabajo: notebooks, bundle, carga incremental, pruebas y pull request. Mostrar el PR #1 integrado y una corrida exitosa.
+3. Corrección concreta: la definición inicial de CHECK falló. El agente la cambió a ALTER TABLE ADD CONSTRAINT y comprobó su existencia para permitir reejecuciones. Mostrar notebook 03 y los errores literales de rank=101 y song_id=NULL.
+4. Resultado: Delta rechazó ambas filas inválidas; el Job terminó correctamente tras reparar Gold.
+5. Responsabilidad: el estudiante eligió el dominio y revisa y explica las decisiones. El agente escribió y ejecutó el código; no se atribuye al estudiante una edición manual no documentada.
+
+O9 ocupa el quinto espacio de evaluación (9% dentro del proyecto). No suma un sexto componente ni reemplaza Bronze/Silver, README o defensa.

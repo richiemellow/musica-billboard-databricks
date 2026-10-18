@@ -12,4 +12,4 @@
 - El correo de gobernanza es ficticio. La máscara es real y depende de una tabla de mapeo. Los tags explicitan la naturaleza de la demostración.
 - El bundle contiene dev y prod. El laboratorio principal se ejecuta en prod; validar dev no equivale a desplegar ni ejecutar dev.
 - Se utilizan timestamps reales. Las capturas y resultados corresponden a ejecuciones efectivas, incluidas correcciones y reparaciones.
-- Los cinco componentes se conservan. O9 es evidencia adicional y cualquier reemplazo lo decide el profesor.
+- El estudiante eligió O9 como reemplazo de C5. Se evalúan C1–C4 y O9; linaje y optimización quedan como respaldo adicional.

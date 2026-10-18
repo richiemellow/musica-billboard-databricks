@@ -8,7 +8,7 @@ Fuente pública: [Billboard Hot 100 & more](https://www.kaggle.com/datasets/ludm
 
 La primera aparición en un ranking no equivale a la fecha de lanzamiento. El proyecto conserva esa distinción y no interpreta posiciones como reproducciones.
 
-El desarrollo incluye la ingesta incremental, limpieza, resultados analíticos, calidad, gobernanza, orquestación y observabilidad. Se documenta la asistencia de un agente externo como actividad O9 adicional, sin sustituir componentes por decisión del estudiante.
+El desarrollo incluye la ingesta incremental, limpieza, resultados analíticos, calidad, gobernanza, orquestación y observabilidad. El estudiante eligió O9 (agentes externos con Databricks CLI) como reemplazo de C5 para la evaluación. La ruta evaluada es V1, V2, C1, C2, C3, C4 y O9. El linaje, liquid clustering y OPTIMIZE se conservan como trabajo adicional de respaldo.
 
 ## Arquitectura
 
@@ -53,8 +53,8 @@ El ZIP [data/dataset_musica_billboard.zip](data/dataset_musica_billboard.zip) co
 | C2 | Job con cinco tareas y dependencias, reintento y trigger | Corrida completa exitosa y configuración |
 | C3 | Catálogo por capas, lector limitado, tabla de mapeo, máscara y tags | SHOW GRANTS y outputs de la máscara |
 | C4 | Git folder, rama, PR integrado y bundle dev/prod | GitHub, Actions y carpeta Git en Databricks |
-| C5 | Consulta a system.access.table_lineage y liquid clustering | OPTIMIZE, DESCRIBE DETAIL e HISTORY |
-| O9 adicional | Agente externo operando Databricks CLI | [Bitácora](docs/AGENTE_O9.md) |
+| O9 reemplaza C5 | Agente externo operando Databricks CLI: solicitud, trabajo, correcciones y validación | [Bitácora](docs/AGENTE_O9.md), notebooks, runs y PR |
+| C5, respaldo adicional | Consulta a system.access.table_lineage y liquid clustering | OPTIMIZE, DESCRIBE DETAIL e HISTORY; no se reclama como componente evaluado |
 
 El grupo `musica_lectores_uc` es un grupo de cuenta vacío. Tiene uso del catálogo y esquemas gold/governance y SELECT sobre objetos concretos; no recibe MODIFY ni permisos sobre bronze/silver o la tabla de mapeo. Los permisos son acumulativos: probar con el propietario no demuestra las limitaciones de un lector real. La máscara se verifica cambiando la fila de mapeo del usuario de demostración y restaurándola en un bloque `finally`. La verificación con una segunda identidad no se declara realizada.
 
