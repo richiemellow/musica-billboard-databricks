@@ -1,0 +1,19 @@
+{
+  "statement_id": "01f1cb0c-8928-119b-a2e9-4bd9d23eddea",
+  "query": "SELECT * FROM musica_saenz.audit.mask_validation ORDER BY observed_at,scenario",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "observed_at": "2026-10-18T15:56:23.152Z",
+      "scenario": "mapping_false",
+      "observed_value": "[oculto]",
+      "is_synthetic": "true"
+    },
+    {
+      "observed_at": "2026-10-18T15:56:23.152Z",
+      "scenario": "mapping_true",
+      "observed_value": "revision.musica@example.invalid",
+      "is_synthetic": "true"
+    }
+  ]
+}

@@ -1,0 +1,111 @@
+{
+  "statement_id": "01f1cb0c-824c-15ba-94aa-98a71ca464b5",
+  "query": "SELECT * FROM musica_saenz.gold.classic_comebacks ORDER BY weeks_observed DESC,best_rank,song_title",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "song_id": "92a22fea0913bfe3df7eac602007ed9b4b80752238def7f61d7dfad95510bc66",
+      "song_title": "Running Up That Hill (A Deal With God)",
+      "artist_credit": "Kate Bush",
+      "first_hot100_decade": "1980s",
+      "first_hot100_date_source": "1985-09-04",
+      "original_release_year": "1985",
+      "release_year_status": "verificado_ano_album_o_single",
+      "weeks_observed": "20",
+      "best_rank": "3",
+      "first_recent_date": "2022-06-08",
+      "last_recent_date": "2022-10-19"
+    },
+    {
+      "song_id": "e04290a82c86fa381a89d20d2477c4fe9affb0e48bbd2ad0054889f6b1b9a69b",
+      "song_title": "Thriller",
+      "artist_credit": "Michael Jackson",
+      "first_hot100_decade": "1980s",
+      "first_hot100_date_source": "1984-02-08",
+      "original_release_year": "1982",
+      "release_year_status": "verificado_ano_album_o_single",
+      "weeks_observed": "7",
+      "best_rank": "10",
+      "first_recent_date": "2020-11-11",
+      "last_recent_date": "2025-11-12"
+    },
+    {
+      "song_id": "2a4799e536794ac382847028bcedb540db3126f91bab8895b31da123beca4d7b",
+      "song_title": "Ghostbusters",
+      "artist_credit": "Ray Parker Jr.",
+      "first_hot100_decade": "1980s",
+      "first_hot100_date_source": "1984-06-13",
+      "original_release_year": null,
+      "release_year_status": "pendiente_verificacion",
+      "weeks_observed": "5",
+      "best_rank": "22",
+      "first_recent_date": "2021-11-10",
+      "last_recent_date": "2025-11-12"
+    },
+    {
+      "song_id": "709886792418268792ef0bc2eaae6b28c54bc831fd129aab51ec7cbd32375e93",
+      "song_title": "Still D.R.E.",
+      "artist_credit": "Dr. Dre Featuring Snoop Dogg",
+      "first_hot100_decade": "1990s",
+      "first_hot100_date_source": "1999-11-24",
+      "original_release_year": null,
+      "release_year_status": "pendiente_verificacion",
+      "weeks_observed": "3",
+      "best_rank": "23",
+      "first_recent_date": "2022-02-23",
+      "last_recent_date": "2022-03-09"
+    },
+    {
+      "song_id": "406a48ffbc85e89581859e3e0ef48fcb692062dc0ee1d25d6c9855f8679892bb",
+      "song_title": "Somebody's Watching Me",
+      "artist_credit": "Rockwell",
+      "first_hot100_decade": "1980s",
+      "first_hot100_date_source": "1984-01-25",
+      "original_release_year": null,
+      "release_year_status": "pendiente_verificacion",
+      "weeks_observed": "3",
+      "best_rank": "24",
+      "first_recent_date": "2021-11-10",
+      "last_recent_date": "2025-11-12"
+    },
+    {
+      "song_id": "b0a5c9709bcfd88225e016b1be33910e5f15ab52f1906ef8612652d9587b9770",
+      "song_title": "\"Mama, I'm Coming Home\"",
+      "artist_credit": "Ozzy Osbourne",
+      "first_hot100_decade": "1990s",
+      "first_hot100_date_source": "1992-02-12",
+      "original_release_year": null,
+      "release_year_status": "pendiente_verificacion",
+      "weeks_observed": "2",
+      "best_rank": "48",
+      "first_recent_date": "2025-07-30",
+      "last_recent_date": "2025-08-06"
+    },
+    {
+      "song_id": "48728875b42259c03b6b5850f3d25c1814bc17ea464b99aa6cf73d579370e135",
+      "song_title": "Ruff Ryders' Anthem",
+      "artist_credit": "DMX",
+      "first_hot100_decade": "1990s",
+      "first_hot100_date_source": "1999-02-17",
+      "original_release_year": null,
+      "release_year_status": "pendiente_verificacion",
+      "weeks_observed": "1",
+      "best_rank": "16",
+      "first_recent_date": "2021-04-21",
+      "last_recent_date": "2021-04-21"
+    },
+    {
+      "song_id": "555faa17262f99b4af78528bb7ce054ce5557357323ef7f83ceba7a61f5472ab",
+      "song_title": "Fast Car",
+      "artist_credit": "Tracy Chapman",
+      "first_hot100_decade": "1980s",
+      "first_hot100_date_source": "1988-06-01",
+      "original_release_year": null,
+      "release_year_status": "pendiente_verificacion",
+      "weeks_observed": "1",
+      "best_rank": "42",
+      "first_recent_date": "2024-02-14",
+      "last_recent_date": "2024-02-14"
+    }
+  ]
+}

@@ -1,0 +1,187 @@
+{
+  "statement_id": "01f1cb0c-8fe9-1e71-a36b-af0d6e613ca5",
+  "query": "SELECT event_time,entity_type,source_table_full_name,target_table_full_name\n FROM system.access.table_lineage WHERE source_table_catalog='musica_saenz' OR target_table_catalog='musica_saenz'\n ORDER BY event_time DESC LIMIT 30",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "event_time": "2026-10-18T15:46:49.068Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.silver.chart_entries",
+      "target_table_full_name": "musica_saenz.gold.validated_positions"
+    },
+    {
+      "event_time": "2026-10-18T15:46:47.034Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.gold.validated_positions"
+    },
+    {
+      "event_time": "2026-10-18T15:46:46.192Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.silver.chart_entries",
+      "target_table_full_name": "musica_saenz.gold.annual_presence"
+    },
+    {
+      "event_time": "2026-10-18T15:46:46.192Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.gold.annual_presence",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:44.145Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.gold.classic_comebacks",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:44.145Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.silver.chart_entries",
+      "target_table_full_name": "musica_saenz.gold.classic_comebacks"
+    },
+    {
+      "event_time": "2026-10-18T15:46:42.617Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.silver.chart_entries",
+      "target_table_full_name": "musica_saenz.gold.annual_presence"
+    },
+    {
+      "event_time": "2026-10-18T15:46:41.805Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.silver.chart_entries",
+      "target_table_full_name": "musica_saenz.gold.classic_comebacks"
+    },
+    {
+      "event_time": "2026-10-18T15:46:30.703Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:29.573Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.audit.quality_metrics",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:28.682Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.audit.quality_metrics"
+    },
+    {
+      "event_time": "2026-10-18T15:46:27.456Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.audit.quality_metrics"
+    },
+    {
+      "event_time": "2026-10-18T15:46:25.984Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.audit.quality_metrics"
+    },
+    {
+      "event_time": "2026-10-18T15:46:24.717Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.audit.quality_metrics"
+    },
+    {
+      "event_time": "2026-10-18T15:46:23.393Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.audit.quality_metrics"
+    },
+    {
+      "event_time": "2026-10-18T15:46:21.956Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.audit.quality_metrics"
+    },
+    {
+      "event_time": "2026-10-18T15:46:19.835Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.audit.quality_metrics"
+    },
+    {
+      "event_time": "2026-10-18T15:46:18.629Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.audit.quality_metrics"
+    },
+    {
+      "event_time": "2026-10-18T15:46:17.240Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.audit.quality_metrics"
+    },
+    {
+      "event_time": "2026-10-18T15:46:16.417Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:15.229Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:14.472Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:13.643Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:12.764Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:12.073Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:11.401Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": null
+    },
+    {
+      "event_time": "2026-10-18T15:46:10.231Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": "musica_saenz.silver.chart_entries"
+    },
+    {
+      "event_time": "2026-10-18T15:46:10.231Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.silver.chart_entries"
+    },
+    {
+      "event_time": "2026-10-18T15:46:05.987Z",
+      "entity_type": "JOB",
+      "source_table_full_name": "musica_saenz.bronze.chart_entries",
+      "target_table_full_name": "musica_saenz.silver.chart_entries"
+    },
+    {
+      "event_time": "2026-10-18T15:46:05.987Z",
+      "entity_type": "JOB",
+      "source_table_full_name": null,
+      "target_table_full_name": "musica_saenz.silver.chart_entries"
+    }
+  ]
+}

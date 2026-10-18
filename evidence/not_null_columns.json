@@ -1,0 +1,19 @@
+{
+  "statement_id": "01f1cb0c-8a15-1290-a588-a985378861c8",
+  "query": "SELECT column_name,is_nullable FROM musica_saenz.information_schema.columns WHERE table_schema='gold' AND table_name='validated_positions' ORDER BY ordinal_position",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "column_name": "song_id",
+      "is_nullable": "NO"
+    },
+    {
+      "column_name": "chart_date",
+      "is_nullable": "NO"
+    },
+    {
+      "column_name": "rank",
+      "is_nullable": "NO"
+    }
+  ]
+}

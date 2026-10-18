@@ -1,0 +1,39 @@
+{
+  "statement_id": "01f1cb0c-8054-1b7a-8d3e-a9a200077c45",
+  "query": "SELECT metric,value FROM musica_saenz.audit.quality_metrics\n WHERE execution_id=(SELECT execution_id FROM musica_saenz.audit.quality_metrics ORDER BY observed_at DESC LIMIT 1) ORDER BY metric",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "metric": "bronze_rows",
+      "value": "31400"
+    },
+    {
+      "metric": "duplicates_removed",
+      "value": "0"
+    },
+    {
+      "metric": "missing_last_week_before",
+      "value": "4899"
+    },
+    {
+      "metric": "null_last_week_after",
+      "value": "4899"
+    },
+    {
+      "metric": "quarantine_rows",
+      "value": "0"
+    },
+    {
+      "metric": "silver_rows",
+      "value": "31400"
+    },
+    {
+      "metric": "unknown_original_release_year",
+      "value": "31373"
+    },
+    {
+      "metric": "unmatched_catalog",
+      "value": "0"
+    }
+  ]
+}

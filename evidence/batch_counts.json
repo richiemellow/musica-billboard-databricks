@@ -1,0 +1,17 @@
+{
+  "statement_id": "01f1cb0c-7ed7-1b54-89c2-20e76277cccb",
+  "query": "SELECT batch_id,count(*) rows,count(DISTINCT source_file) source_files FROM musica_saenz.bronze.chart_entries GROUP BY batch_id ORDER BY batch_id",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "batch_id": "lote_01",
+      "rows": "15700",
+      "source_files": "1"
+    },
+    {
+      "batch_id": "lote_02",
+      "rows": "15700",
+      "source_files": "1"
+    }
+  ]
+}

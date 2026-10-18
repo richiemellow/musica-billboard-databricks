@@ -1,0 +1,75 @@
+{
+  "statement_id": "01f1cb0c-8b3b-1ae7-81f3-d9a471590082",
+  "query": "SHOW TBLPROPERTIES musica_saenz.gold.validated_positions",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "key": "delta.constraints.valid_rank",
+      "value": "rank BETWEEN 1 AND 100"
+    },
+    {
+      "key": "delta.enableDeletionVectors",
+      "value": "true"
+    },
+    {
+      "key": "delta.enableRowTracking",
+      "value": "true"
+    },
+    {
+      "key": "delta.feature.appendOnly",
+      "value": "supported"
+    },
+    {
+      "key": "delta.feature.checkConstraints",
+      "value": "supported"
+    },
+    {
+      "key": "delta.feature.deletionVectors",
+      "value": "supported"
+    },
+    {
+      "key": "delta.feature.domainMetadata",
+      "value": "supported"
+    },
+    {
+      "key": "delta.feature.invariants",
+      "value": "supported"
+    },
+    {
+      "key": "delta.feature.rowTracking",
+      "value": "supported"
+    },
+    {
+      "key": "delta.minReaderVersion",
+      "value": "3"
+    },
+    {
+      "key": "delta.minWriterVersion",
+      "value": "7"
+    },
+    {
+      "key": "delta.parquet.compression.codec",
+      "value": "zstd"
+    },
+    {
+      "key": "delta.parquet.format.version",
+      "value": "2.12.0"
+    },
+    {
+      "key": "delta.parquet.format.version.afe.internal",
+      "value": "2.12.0"
+    },
+    {
+      "key": "delta.rowTracking.materializedRowCommitVersionColumnName",
+      "value": "_row-commit-version-col-e4ce9d96-28aa-4d03-9420-3357633ae2f0"
+    },
+    {
+      "key": "delta.rowTracking.materializedRowIdColumnName",
+      "value": "_row-id-col-b2c0ed9b-de1f-4f19-85b1-8b9a17bc2463"
+    },
+    {
+      "key": "io.unitycatalog.tableId",
+      "value": "eda6639f-43d1-4bbb-a509-7608472011bb"
+    }
+  ]
+}

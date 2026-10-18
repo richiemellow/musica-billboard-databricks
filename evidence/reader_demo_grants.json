@@ -1,0 +1,13 @@
+{
+  "statement_id": "01f1cb0c-8776-1e4c-924e-0caddf5040b1",
+  "query": "SHOW GRANTS `musica_lectores_uc` ON TABLE musica_saenz.governance.reviewers_demo",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "Principal": "musica_lectores_uc",
+      "ActionType": "SELECT",
+      "ObjectType": "TABLE",
+      "ObjectKey": "musica_saenz.governance.reviewers_demo"
+    }
+  ]
+}

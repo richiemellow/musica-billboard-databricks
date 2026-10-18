@@ -8,7 +8,7 @@ Fuente pública: [Billboard Hot 100 & more](https://www.kaggle.com/datasets/ludm
 
 La primera aparición en un ranking no equivale a la fecha de lanzamiento. El proyecto conserva esa distinción y no interpreta posiciones como reproducciones.
 
-El desarrollo incluye la ingesta incremental, limpieza, resultados analíticos, calidad, gobernanza, orquestación y observabilidad. Se documentará la asistencia de un agente externo como actividad O9 adicional, sin sustituir componentes por decisión del estudiante.
+El desarrollo incluye la ingesta incremental, limpieza, resultados analíticos, calidad, gobernanza, orquestación y observabilidad. Se documenta la asistencia de un agente externo como actividad O9 adicional, sin sustituir componentes por decisión del estudiante.
 
 ## Arquitectura
 
@@ -58,6 +58,8 @@ El ZIP [data/dataset_musica_billboard.zip](data/dataset_musica_billboard.zip) co
 
 El grupo `musica_lectores_uc` es un grupo de cuenta vacío. Tiene uso del catálogo y esquemas gold/governance y SELECT sobre objetos concretos; no recibe MODIFY ni permisos sobre bronze/silver o la tabla de mapeo. Los permisos son acumulativos: probar con el propietario no demuestra las limitaciones de un lector real. La máscara se verifica cambiando la fila de mapeo del usuario de demostración y restaurándola en un bloque `finally`. La verificación con una segunda identidad no se declara realizada.
 
+SHOW GRANTS también muestra `BROWSE` heredado de `account users` en el catálogo. Es visibilidad de metadatos y no otorga lectura de las filas; se conserva y se documenta explícitamente.
+
 Los tags `classification=sensitive_demo` y `synthetic=true` dejan claro que la columna de correo es una demostración. No se presenta el nombre público de un artista como dato confidencial.
 
 ## Cómo ejecutar
@@ -76,6 +78,36 @@ Requisitos: Databricks CLI autenticado, workspace con Unity Catalog y serverless
 La configuración del trigger puede mantenerse pausada durante el montaje inicial y activarse después. Si ya está activa, la llegada del segundo archivo puede disparar la corrida automáticamente; verificar la lista de runs antes de iniciar otra. Las reejecuciones son seguras para la ingesta, pero agregan registros reales a las tablas de auditoría.
 
 El bundle es la fuente de configuración del Job. Cambiar `databricks.yml` y volver a desplegar para modificarlo. No editar a mano los notebooks publicados dentro de `.bundle`.
+
+## Evidencia verificada
+
+Resultados reales del 18 de octubre de 2026:
+
+| Ejecución de ingesta | Filas antes | Filas después | Filas nuevas |
+|---|---:|---:|---:|
+| Lote 1 | 0 | 15.700 | 15.700 |
+| Lote 2 | 15.700 | 31.400 | 15.700 |
+| Sin archivos nuevos | 31.400 | 31.400 | 0 |
+
+Silver conserva 31.400 filas y tiene 4.899 posiciones previas NULL, cero filas en cuarentena y cero canciones sin catálogo. Los datos suministrados no tenían duplicados de negocio: la deduplicación quitó cero filas. Las ocho candidatas en gold son un resultado provisional por década de debut, no una lista exhaustiva por año original.
+
+Los JSON de [evidence](evidence) conservan identificador de consulta, SQL y resultados reales. Se omiten identidades personales y rutas internas de almacenamiento de los resúmenes publicados. Los errores de calidad se guardan como extractos literales del mensaje, sin la traza JVM; el error completo está en `audit.quality_rejections` y en los outputs de Databricks.
+
+- [Auditoría incremental](evidence/ingestion_runs.json), [conteos por lote](evidence/batch_counts.json) y [limpieza](evidence/silver_quality.json).
+- [Resultados analíticos](evidence/classics.json), [filas rechazadas](evidence/rejected_rows.json) y [columnas NOT NULL](evidence/not_null_columns.json).
+- [Permisos de catálogo](evidence/reader_catalog_grants.json), [permisos de tabla](evidence/reader_table_grants.json), [máscara](evidence/mask_validation.json) y [tags](evidence/demo_tags.json).
+- [Clustering](evidence/clustering.json), [historial con OPTIMIZE](evidence/table_history.json) y [linaje real](evidence/system_lineage.json).
+- [Job con trigger activo y reintento](evidence/job_configuration.json). Las corridas de validación fueron iniciadas manualmente; no se declara una ejecución automática del trigger.
+
+![Primera corrida completa, tras reparar la sintaxis de CHECK](evidence/01_primera_corrida.png)
+
+![Segunda corrida completa con ambos lotes](evidence/02_segunda_corrida.png)
+
+![Tercera corrida completa sin archivos nuevos](evidence/03_idempotencia.png)
+
+[Estados y tiempos reales de las tres corridas](evidence/job_runs.json). La primera requirió reparar Gold; los intentos fallidos se conservan en la evidencia. [Pull request de implementación](https://github.com/richiemellow/musica-billboard-databricks/pull/1).
+
+Verificación local reproducible: `python scripts/validate_project.py` y `python scripts/validate_evidence.py`. GitHub Actions ejecuta ambas sin credenciales de Databricks.
 
 ## Interpretación y defensa
 

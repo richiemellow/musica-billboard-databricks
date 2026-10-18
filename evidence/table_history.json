@@ -1,0 +1,56 @@
+{
+  "statement_id": "01f1cb0c-8db7-1732-846c-4cea6c82da21",
+  "query": "DESCRIBE HISTORY musica_saenz.silver.chart_entries LIMIT 8",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "version": "6",
+      "timestamp": "2026-10-18T15:56:44.000Z",
+      "operation": "OPTIMIZE",
+      "operationParameters": "{\"predicate\":\"[]\",\"auto\":\"false\",\"clusterBy\":\"[\\\"chart_date\\\",\\\"song_id\\\"]\",\"isFull\":\"false\",\"zOrderBy\":\"[]\",\"batchId\":\"-1\"}",
+      "operationMetrics": "{}"
+    },
+    {
+      "version": "5",
+      "timestamp": "2026-10-18T15:55:11.000Z",
+      "operation": "WRITE",
+      "operationParameters": "{\"partitionBy\":\"[]\",\"clusterBy\":\"[\\\"chart_date\\\",\\\"song_id\\\"]\",\"statsOnLoad\":\"true\",\"mode\":\"Overwrite\",\"clusteringOnWriteStatus\":\"late-stage clustering triggered\"}",
+      "operationMetrics": "{\"numFiles\":\"1\",\"numRemovedFiles\":\"1\",\"numRemovedBytes\":\"598486\",\"numDeletionVectorsRemoved\":\"0\",\"numOutputRows\":\"31400\",\"numOutputBytes\":\"598486\"}"
+    },
+    {
+      "version": "4",
+      "timestamp": "2026-10-18T15:47:41.000Z",
+      "operation": "OPTIMIZE",
+      "operationParameters": "{\"predicate\":\"[]\",\"auto\":\"false\",\"clusterBy\":\"[\\\"chart_date\\\",\\\"song_id\\\"]\",\"isFull\":\"false\",\"zOrderBy\":\"[]\",\"batchId\":\"-1\"}",
+      "operationMetrics": "{}"
+    },
+    {
+      "version": "3",
+      "timestamp": "2026-10-18T15:46:10.000Z",
+      "operation": "WRITE",
+      "operationParameters": "{\"partitionBy\":\"[]\",\"clusterBy\":\"[\\\"chart_date\\\",\\\"song_id\\\"]\",\"statsOnLoad\":\"true\",\"mode\":\"Overwrite\",\"clusteringOnWriteStatus\":\"late-stage clustering triggered\"}",
+      "operationMetrics": "{\"numFiles\":\"1\",\"numRemovedFiles\":\"1\",\"numRemovedBytes\":\"296760\",\"numDeletionVectorsRemoved\":\"0\",\"numOutputRows\":\"31400\",\"numOutputBytes\":\"598486\"}"
+    },
+    {
+      "version": "2",
+      "timestamp": "2026-10-18T15:42:32.000Z",
+      "operation": "OPTIMIZE",
+      "operationParameters": "{\"predicate\":\"[]\",\"auto\":\"false\",\"clusterBy\":\"[\\\"chart_date\\\",\\\"song_id\\\"]\",\"isFull\":\"false\",\"zOrderBy\":\"[]\",\"batchId\":\"-1\"}",
+      "operationMetrics": "{}"
+    },
+    {
+      "version": "1",
+      "timestamp": "2026-10-18T15:37:44.000Z",
+      "operation": "WRITE",
+      "operationParameters": "{\"partitionBy\":\"[]\",\"clusterBy\":\"[\\\"chart_date\\\",\\\"song_id\\\"]\",\"statsOnLoad\":\"true\",\"mode\":\"Overwrite\",\"clusteringOnWriteStatus\":\"late-stage clustering triggered\"}",
+      "operationMetrics": "{\"numFiles\":\"1\",\"numRemovedFiles\":\"0\",\"numRemovedBytes\":\"0\",\"numDeletionVectorsRemoved\":\"0\",\"numOutputRows\":\"15700\",\"numOutputBytes\":\"296760\"}"
+    },
+    {
+      "version": "0",
+      "timestamp": "2026-10-18T15:37:39.000Z",
+      "operation": "CREATE TABLE AS SELECT",
+      "operationParameters": "{\"partitionBy\":\"[]\",\"clusterBy\":\"[\\\"chart_date\\\",\\\"song_id\\\"]\",\"description\":null,\"isManaged\":\"true\",\"properties\":\"{\\\"delta.parquet.compression.codec\\\":\\\"zstd\\\",\\\"delta.parquet.format.version.afe.internal\\\":\\\"2.12.0\\\",\\\"delta.enableDeletionVectors\\\":\\\"true\\\",\\\"databricks.delta.expressionStats.selectedColumns\\\":\\\"upper(song_id),lower(song_id)\\\",\\\"delta.parquet.format.version\\\":\\\"2.12.0\\\",\\\"delta.enableRowTracking\\\":\\\"true\\\",\\\"delta.checkpointPolicy\\\":\\\"v2\\\",\\\"io.unitycatalog.tableId\\\":\\\"1593505d-5dfd-41c1-bd85-dee52e630999\\\",\\\"delta.rowTracking.materializedRowCommitVersionColumnName\\\":\\\"_row-commit-version-col-c968deaa-4ec1-4815-b69a-ac6d3dac6caa\\\",\\\"delta.rowTracking.materializedRowIdColumnName\\\":\\\"_row-id-col-66bbf231-adde-4f58-9097-aec39461d9d5\\\"}\",\"statsOnLoad\":\"true\",\"clusteringOnWriteStatus\":\"Reason for skipping: No data to ingest\"}",
+      "operationMetrics": "{\"numFiles\":\"0\",\"numOutputRows\":\"0\",\"numOutputBytes\":\"0\"}"
+    }
+  ]
+}

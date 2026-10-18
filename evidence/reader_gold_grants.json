@@ -1,0 +1,13 @@
+{
+  "statement_id": "01f1cb0c-8607-1e2a-befc-850262f22bc8",
+  "query": "SHOW GRANTS `musica_lectores_uc` ON SCHEMA musica_saenz.gold",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "Principal": "musica_lectores_uc",
+      "ActionType": "USE SCHEMA",
+      "ObjectType": "SCHEMA",
+      "ObjectKey": "musica_saenz.gold"
+    }
+  ]
+}

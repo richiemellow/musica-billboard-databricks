@@ -1,0 +1,15 @@
+{
+  "statement_id": "01f1cb0c-8c6f-18c3-a524-6847d3d3e66e",
+  "query": "DESCRIBE DETAIL musica_saenz.silver.chart_entries",
+  "status": "SUCCEEDED",
+  "rows": [
+    {
+      "format": "delta",
+      "name": "musica_saenz.silver.chart_entries",
+      "partitionColumns": "[]",
+      "clusteringColumns": "[\"chart_date\",\"song_id\"]",
+      "numFiles": "1",
+      "sizeInBytes": "598486"
+    }
+  ]
+}
