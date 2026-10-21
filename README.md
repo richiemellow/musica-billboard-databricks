@@ -4,7 +4,7 @@ Proyecto final del módulo 4 del Técnico en Ingeniería de Datos con Databricks
 
 Este README es el recorrido de la defensa: primero la pregunta, después cómo se construye una respuesta confiable y, al final, qué podemos concluir. **Ruta elegida: V1/V2 + C1, C2, C3, C4 y O9 en reemplazo de C5.** O9 ocupa uno de los cinco componentes; no suma un sexto.
 
-**Antes de empezar:** compartir el [repositorio público](https://github.com/richiemellow/musica-billboard-databricks), abrir la [segunda corrida completa](https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/759442763674218) y sus tareas, el Git folder y el [PR #1 integrado](https://github.com/richiemellow/musica-billboard-databricks/pull/1). Las [consultas de lectura](docs/demo_lectura.sql) permiten mostrar resultados sin insertar pruebas ni cambiar permisos.
+**Antes de empezar:** compartir el [repositorio público](https://github.com/richiemellow/musica-billboard-databricks), abrir la [segunda corrida completa](https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/759442763674218) y sus tareas, el Git folder y el [PR #1 integrado](https://github.com/richiemellow/musica-billboard-databricks/pull/1). Las [consultas de lectura](https://github.com/richiemellow/musica-billboard-databricks/blob/docs/defensa-o9-reemplaza-c5/docs/demo_lectura.sql) permiten mostrar resultados sin insertar pruebas ni cambiar permisos.
 
 Los enlaces a Databricks provienen de `run_page_url` en [job_runs.json](evidence/job_runs.json) y requieren acceso al workspace. Son evidencia de ejecuciones del **18 de octubre de 2026**, no una comprobación en vivo de esta sesión. Desde cada corrida, seleccionar la tarea indicada para abrir su notebook y salida. Los `.py` de GitHub muestran código, no outputs. No se localizaron enlaces verificados a consultas guardadas o dashboards; los `statement_id` de los JSON identifican consultas ejecutadas, no dashboards ni enlaces públicos.
 
@@ -76,7 +76,7 @@ La auditoría exportada registra:
 | Segundo lote | 15.700 | 31.400 | 15.700 |
 | Sin archivos nuevos | 31.400 | 31.400 | 0 |
 
-Fuente: [ingestion_runs.json](evidence/ingestion_runs.json), campos `rows_before`, `rows_after`, `rows_added`. [batch_counts.json](evidence/batch_counts.json) confirma **15.700 filas y un archivo distinto por lote**. Ambos conservan SQL, `statement_id`, estado y resultados. Mostrar consultas **1–2** de [demo_lectura.sql](docs/demo_lectura.sql).
+Fuente: [ingestion_runs.json](evidence/ingestion_runs.json), campos `rows_before`, `rows_after`, `rows_added`. [batch_counts.json](evidence/batch_counts.json) confirma **15.700 filas y un archivo distinto por lote**. Ambos conservan SQL, `statement_id`, estado y resultados. Mostrar consultas **1–2** de [demo_lectura.sql](https://github.com/richiemellow/musica-billboard-databricks/blob/docs/defensa-o9-reemplaza-c5/docs/demo_lectura.sql).
 
 ![Tercera corrida real: run 61396012224893, cinco tareas exitosas, inicio manual](evidence/03_idempotencia.png)
 
@@ -88,7 +88,7 @@ La captura demuestra el estado del Job; **el cero de filas nuevas se demuestra c
 
 > Conservar archivos no basta: necesito fechas y posiciones con sus tipos correctos, una regla para los ausentes y una llave que no multiplique canciones al enriquecerlas.
 
-**Abrir:** [notebook 02](notebooks/02_silver.py), o tarea **silver** de la [segunda corrida](https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/759442763674218). Mostrar `typed`, `valid`, `Window.partitionBy(*keys)`, `dedup.join(metadata,'song_id','left')` y la salida final de métricas; consultas **3–4** del [recorrido SQL](docs/demo_lectura.sql).
+**Abrir:** [notebook 02](notebooks/02_silver.py), o tarea **silver** de la [segunda corrida](https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/759442763674218). Mostrar `typed`, `valid`, `Window.partitionBy(*keys)`, `dedup.join(metadata,'song_id','left')` y la salida final de métricas; consultas **3–4** del [recorrido SQL](https://github.com/richiemellow/musica-billboard-databricks/blob/docs/defensa-o9-reemplaza-c5/docs/demo_lectura.sql).
 
 | Decisión | Por qué | Resultado exportado |
 |---|---|---|
@@ -106,7 +106,7 @@ Silver se reconstruye desde Bronze completo porque el volumen es pequeño; un pi
 
 > Ahora sí puedo responder la pregunta original. La vista encuentra ocho candidatas por década de debut observado. Las semanas son fechas distintas presentes en 2020–2025, aunque haya salidas y reingresos; no son necesariamente semanas consecutivas.
 
-**Abrir:** [notebook 03](notebooks/03_gold.py), tarea **gold** de la [segunda corrida](https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/759442763674218); mostrar `classic_comebacks` y consultas **5–7** de [demo_lectura.sql](docs/demo_lectura.sql).
+**Abrir:** [notebook 03](notebooks/03_gold.py), tarea **gold** de la [segunda corrida](https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/759442763674218); mostrar `classic_comebacks` y consultas **5–7** de [demo_lectura.sql](https://github.com/richiemellow/musica-billboard-databricks/blob/docs/defensa-o9-reemplaza-c5/docs/demo_lectura.sql).
 
 | Canción y crédito | Semanas observadas | Mejor puesto |
 |---|---:|---:|
@@ -148,18 +148,61 @@ Las tres validaciones fueron **manuales**. Tener trigger configurado no prueba q
 
 > El lector necesita consultar resultados, no modificar el pipeline. Para mostrar una columna protegida sin inventar datos privados de artistas, separé una tabla de revisores con un correo ficticio. La máscara es real y consulta una tabla de mapeo.
 
-**Abrir:** [notebook 04](notebooks/04_gobernanza.py), tarea **governance** de la [tercera corrida](https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/61396012224893); mostrar consultas **8–11** del [recorrido SQL](docs/demo_lectura.sql).
+**Abrir:** [notebook 04](notebooks/04_gobernanza.py), tarea **governance** de la [tercera corrida](https://dbc-817cb94c-e059.cloud.databricks.com/?o=7474649418788750#job/1104473859137730/run/61396012224893); mostrar consultas **8–11** del [recorrido SQL](https://github.com/richiemellow/musica-billboard-databricks/blob/docs/defensa-o9-reemplaza-c5/docs/demo_lectura.sql).
 
-| Qué mostrar | Evidencia y lectura precisa |
+**Estos son los resultados guardados de la prueba del 18 de octubre de 2026.** No hace falta interpretar JSON para leerlos; los enlaces a esos archivos quedan como respaldo.
+
+**Primero: qué puede consultar el lector.**
+
+| Perfil | Permiso observado | Objeto | Qué significa |
+|---|---|---|---|
+| `musica_lectores_uc` | `USE CATALOG` | `musica_saenz` | Puede usar el catálogo |
+| `musica_lectores_uc` | `USE SCHEMA` | `musica_saenz.gold` | Puede usar el esquema Gold |
+| `musica_lectores_uc` | `SELECT` | `gold.validated_positions` | Puede consultar esa tabla |
+| `musica_lectores_uc` | `SELECT` | `governance.reviewers_demo` | Puede consultar la tabla de demostración |
+
+Cada fila transcribe una salida de `SHOW GRANTS`: [catálogo](evidence/reader_catalog_grants.json), [Gold](evidence/reader_gold_grants.json), [tabla validada](evidence/reader_table_grants.json) y [tabla demo](evidence/reader_demo_grants.json). No es un inventario exhaustivo de todos los permisos del workspace. El grupo de cuenta está vacío; no recibe MODIFY ni permisos directos sobre Bronze/Silver o el mapa. Se conserva `BROWSE` heredado de `account users`: permite descubrir metadatos, no leer filas por sí solo.
+
+**Después: qué hace la máscara con el correo.**
+
+> Si mi autorización dice que no puedo ver el correo, la consulta devuelve `[oculto]`. Si me autoriza, devuelve el correo ficticio. La consulta funciona en ambos casos: ocultar el dato no es un error.
+
+| Autorización del mapa durante la prueba | Resultado observado en la consulta |
 |---|---|
-| `SHOW GRANTS` de `musica_lectores_uc` | [Catálogo](evidence/reader_catalog_grants.json), [Gold](evidence/reader_gold_grants.json), [tabla validada](evidence/reader_table_grants.json) y [tabla demo](evidence/reader_demo_grants.json): uso y SELECT en objetos concretos |
-| Tabla `governance.access_map` y función `mask_reviewer_email` | Notebook 04: `current_user()` y `can_view_email` controlan `SET MASK` |
-| Ambos resultados de la máscara | [mask_validation.json](evidence/mask_validation.json): `mapping_false` → `[oculto]`; `mapping_true` → `revision.musica@example.invalid` |
-| Tags de `reviewer_email` | [demo_tags.json](evidence/demo_tags.json): `classification=sensitive_demo`, `synthetic=true` |
+| Sin autorización (`mapping_false`) | `[oculto]` |
+| Con autorización (`mapping_true`) | `revision.musica@example.invalid` |
 
-El grupo de cuenta está vacío; no recibe MODIFY ni permisos directos sobre Bronze/Silver o el mapa. Los permisos son acumulativos: probar como propietario no demuestra el acceso efectivo de otro lector. Se conserva `BROWSE` heredado de `account users`: permite descubrir metadatos, no leer filas por sí solo.
+Fuente: [mask_validation.json](evidence/mask_validation.json), campo `rows`, registros de `2026-10-18T15:56:23.152Z`. El notebook 04 conecta `governance.access_map` con la función `mask_reviewer_email` mediante `SET MASK`. Cambió el mapeo de **la misma identidad**, comprobó ambos resultados y lo restauró con `finally`. **No se probó una segunda identidad y no se reclama O2.** Los permisos son acumulativos: probar como propietario no demuestra el acceso efectivo de otro lector.
 
-La prueba cambió el mapeo de **la misma identidad**, comprobó oculto/visible y lo restauró con `finally`. **No se probó una segunda identidad y no se reclama O2.** No hay captura específica de estos outputs en el repo; los JSON preservan la evidencia histórica y debe abrirse la salida de la tarea al presentar.
+**Para mostrar esos dos resultados en Databricks**, abrir SQL Editor o una celda SQL y ejecutar esta consulta de lectura. Consulta la evidencia histórica; no vuelve a cambiar la autorización:
+
+```sql
+SELECT observed_at, scenario, observed_value
+FROM musica_saenz.audit.mask_validation
+ORDER BY observed_at, scenario;
+```
+
+Para consultar la tabla protegida con la autorización **actual**, usar:
+
+```sql
+SELECT *
+FROM musica_saenz.governance.reviewers_demo;
+```
+
+Son dos consultas diferentes: la primera recupera la prueba guardada; la segunda aplica la máscara al consultar ahora. Como la prueba restauró la autorización al terminar, ver el correo completo puede ser correcto. No se ejecutaron estas consultas de nuevo al redactar esta sección.
+
+**Finalmente: cómo se identifica la columna de demostración.**
+
+| Columna | Etiqueta | Valor guardado |
+|---|---|---|
+| `governance.reviewers_demo.reviewer_email` | `classification` | `sensitive_demo` |
+| `governance.reviewers_demo.reviewer_email` | `synthetic` | `true` |
+
+Fuente: [demo_tags.json](evidence/demo_tags.json). Las etiquetas identifican el carácter sensible de la demostración y que el dato es ficticio; la función de máscara controla lo que devuelve la consulta.
+
+**Dónde abrir cada cosa:** GitHub muestra código y resultados exportados; no ejecuta SQL. El [recorrido SQL de esta revisión](https://github.com/richiemellow/musica-billboard-databricks/blob/docs/defensa-o9-reemplaza-c5/docs/demo_lectura.sql) contiene las consultas 8–11 para usar en Databricks. Si se abre el mismo archivo bajo `main` antes de integrar el PR #2, puede aparecer una página de archivo inexistente: eso no es una prueba del enmascarado. Los errores de filas inválidas corresponden a **C1**, sección 5.
+
+No hay captura específica de estos outputs en el repo. Las tablas anteriores transcriben resultados exportados, no capturas ni una nueva ejecución. En la defensa, abrir la tarea **governance** de la corrida enlazada para mostrar la salida del notebook.
 
 ## 8. Código y despliegue · C4
 
